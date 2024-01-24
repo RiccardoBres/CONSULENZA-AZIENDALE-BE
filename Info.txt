@@ -1,0 +1,9 @@
+password: 0TjeZHwYMFuPpNNA
+userName: riccardobresolin63
+
+mongodb+srv://riccardobresolin63:0TjeZHwYMFuPpNNA@consulting.kmfp8pw.mongodb.net/
+
+
+BUG TO FIX:
+after page refresh, session expires and a new login is required.
+

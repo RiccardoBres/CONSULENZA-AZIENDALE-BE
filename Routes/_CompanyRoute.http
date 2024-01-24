@@ -1,0 +1,38 @@
+POST http://localhost:9090/company/create HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFkMjNmMDE4Y2U5OTcxYjk1MDVlYmEiLCJpYXQiOjE3MDU4NDU3NzEsImV4cCI6MTcwNTg0OTM3MX0.4L4aKOPpzromk5JuvrrGCyAFxHnX6VjF6Fxdmwn3X70
+Content-Type: application/json
+
+{
+  "companyName": "AziendaProva",
+  "industry": "SettoreProva",
+  "location": "UbicazioneProva",
+  "specificCompanyInfo": {
+    "annualRevenue": 1000000,
+    "profitMargin": 0.1,
+    "numberOfEmployees": 50,
+    "employeeExperience": "EsperienzaProva",
+    "keyChallenges": ["SfidaProva1", "SfidaProva2"],
+    "strategicGoals": ["ObiettivoProva1", "ObiettivoProva2"]
+  },
+  "additionalInfo": {
+    "campoAggiuntivo1": "ValoreProva1",
+    "campoAggiuntivo2": "ValoreProva2"
+  },
+  "user": "65ad23f018ce9971b9505eba"
+}
+
+####
+PUT http://localhost:9090/company/65ad38d6ea828efe8dc8f238 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFkMzA2OGRhZjI3YTA4YjUxY2QyMTYiLCJpYXQiOjE3MDU4NTE2NzUsImV4cCI6MTcwNTg1NTI3NX0.zVwoAaNL0QCZhcmGFO7FAfEPlxJCQQVxholFE_6rjpo
+Content-Type: application/json
+
+{
+ "additionalInfo": {
+    "campoAggiuntivo1": "ValoreProva1",
+    "campoAggiuntivo2": "ValoreProva2"
+ }
+}
+
+####
+GET http://localhost:9090/company
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlMzVkZjJmMmZkZDBmMzQwMTk2OWYiLCJpYXQiOjE3MDYwMzY3NzAsImV4cCI6MTcwNjA0MDM3MH0.MkmeCBLn9ooKdR5hqiqtH1krv1H33exDfYeBErvUDF8
