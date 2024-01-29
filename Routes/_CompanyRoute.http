@@ -36,3 +36,26 @@ Content-Type: application/json
 ####
 GET http://localhost:9090/company
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlMzVkZjJmMmZkZDBmMzQwMTk2OWYiLCJpYXQiOjE3MDYwMzY3NzAsImV4cCI6MTcwNjA0MDM3MH0.MkmeCBLn9ooKdR5hqiqtH1krv1H33exDfYeBErvUDF8
+####
+POST http://localhost:9090/company/create HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWI1MTUxYzlkYWRjNzU5ZTEyMjM3NDkiLCJpYXQiOjE3MDYzNjYyMzcsImV4cCI6MTcwNjM2OTgzN30.fTOGAIB4Jqy2EZDNcXjgcgEPccI73AOfGJMVy54Jr6U
+Content-Type: application/json
+
+{
+  "companyName": "AziendaProva",
+  "industry": "SettoreProva",
+  "location": "UbicazioneProva",
+  "specificCompanyInfo": {
+    "annualRevenue": 1000000,
+    "profitMargin": 0.1,
+    "numberOfEmployees": 50,
+    "employeeExperience": "EsperienzaProva",
+    "keyChallenges": ["SfidaProva1", "SfidaProva2"],
+    "strategicGoals": ["ObiettivoProva1", "ObiettivoProva2"]
+  },
+  "additionalInfo": {
+    "campoAggiuntivo1": "ValoreProva1",
+    "campoAggiuntivo2": "ValoreProva2"
+  },
+  "user": "65b515c79dadc759e122374c"
+}

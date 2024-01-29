@@ -37,19 +37,12 @@ app.use(passport.session());
 app.use('/', UserRoute);
 app.use('/', CompanyRoute);
 
+
 mongoose.connect(process.env.MONGO_DB_URL);
 const db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "errore connessione al server"));
+db.on("error", console.error.bind( "errore connessione al server"));
 db.once("open", () => { console.log("database mongodb connesso") });
-
-app.use((err, req, res, next) => {
-    console.error("Error in session middleware:", err);
-    res.status(500).send({
-        statusCode: 500,
-        message: "Internal Server Error"
-    });
-});
 
 app.listen(PORT, () =>
     console.log(`server avviato e in ascolto sulla porta ${PORT}`)
