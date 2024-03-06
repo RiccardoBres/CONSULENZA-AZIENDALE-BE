@@ -17,21 +17,24 @@ const CompanyModel = new mongoose.Schema({
         // Performance Finanziaria
         annualRevenue: {
             type: Number,
+            required: true,
         },
         profitMargin: {
             type: Number,
+            required: true,
         },
         expensesBreakdown: {
-            type: Object,
-            default: {},
+            type: String,
+            required: true,
         },
-
         // Risorse Umane
         numberOfEmployees: {
             type: Number,
+            required: true,
         },
         employeeExperience: {
             type: String,
+            required: true,
         },
         averageEmployeeTenure: {
             type: Number,
@@ -39,15 +42,14 @@ const CompanyModel = new mongoose.Schema({
         employeeSatisfaction: {
             type: Number,
         },
-
         // Produzione ed Efficienza
         productionOutput: {
             type: Number,
+            required: true,
         },
         efficiencyMetrics: {
             type: Number,
         },
-
         // Cliente e Mercato
         customerRetentionRate: {
             type: Number,
@@ -58,7 +60,6 @@ const CompanyModel = new mongoose.Schema({
         technologyAdoptionRate: {
             type: Number,
         },
-
         // Sostenibilità e CSR
         innovationProjects: {
             type: Number,
@@ -81,7 +82,6 @@ const CompanyModel = new mongoose.Schema({
         sustainabilityInitiatives: {
             type: String,
         },
-
         // Obiettivi e Sfide
         keyChallenges: {
             type: [String],
@@ -93,6 +93,10 @@ const CompanyModel = new mongoose.Schema({
     additionalInfo: {
         type: Object,
         default: {},
+    },
+    consultResult: {
+        type: String,
+        required: false
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

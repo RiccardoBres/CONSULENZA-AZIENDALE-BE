@@ -22,20 +22,18 @@ Content-Type: application/json
 }
 
 ####
-PUT http://localhost:9090/company/65ad38d6ea828efe8dc8f238 HTTP/1.1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFkMzA2OGRhZjI3YTA4YjUxY2QyMTYiLCJpYXQiOjE3MDU4NTE2NzUsImV4cCI6MTcwNTg1NTI3NX0.zVwoAaNL0QCZhcmGFO7FAfEPlxJCQQVxholFE_6rjpo
+PUT http://localhost:9090/company/update/65e879274d3fc919e81c00ea HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWU4NzkxMzRkM2ZjOTE5ZTgxYzAwZTYiLCJ1c2VybmFtZSI6IlJpY2NhcmRvIiwiaWF0IjoxNzA5NzU5OTczLCJleHAiOjE3MDk3NjM1NzN9.up6UrUCYNSqTT8NjXF2De9Ut-dQdCSJqXH-aNHEeUFQ
 Content-Type: application/json
 
 {
- "additionalInfo": {
-    "campoAggiuntivo1": "ValoreProva1",
-    "campoAggiuntivo2": "ValoreProva2"
- }
+ "fieldName": "specificCompanyInfo.employeeExperience",
+ "fieldValue": "mokm"
 }
 
 ####
 GET http://localhost:9090/company
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlMzVkZjJmMmZkZDBmMzQwMTk2OWYiLCJpYXQiOjE3MDYwMzY3NzAsImV4cCI6MTcwNjA0MDM3MH0.MkmeCBLn9ooKdR5hqiqtH1krv1H33exDfYeBErvUDF8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWI5NGZlNWQxYjQ1MWU3NjIxODY5NWMiLCJ1c2VybmFtZSI6IlJpY2NhcmRvIiwiaWF0IjoxNzA5NjczMDM2LCJleHAiOjE3MDk2NzY2MzZ9.5J-UlUbGLoCrA3GC8-umx1TwjzHGdnSwXFPPfKxMRws
 ####
 POST http://localhost:9090/company/create HTTP/1.1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWI1MTUxYzlkYWRjNzU5ZTEyMjM3NDkiLCJpYXQiOjE3MDYzNjYyMzcsImV4cCI6MTcwNjM2OTgzN30.fTOGAIB4Jqy2EZDNcXjgcgEPccI73AOfGJMVy54Jr6U
