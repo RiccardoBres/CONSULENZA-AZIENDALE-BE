@@ -13,7 +13,7 @@ require("dotenv").config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://consulwise.onrender.com',
+    origin: 'https://consultwise.netlify.app',
     credentials: true,
 }));
 app.use(express.json());
