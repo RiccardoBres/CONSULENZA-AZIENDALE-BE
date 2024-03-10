@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const PORT = 9090;
@@ -10,15 +8,14 @@ const MongoStore = require('connect-mongo');
 const crypto = require('crypto');
 const UserRoute = require('./Routes/UserRoutes');
 const CompanyRoute = require('./Routes/CompanyRoutes');
-const corsOptions = {
-    origin: '*', 
-    credentials: true,
-};
 
 require("dotenv").config();
 
 const app = express();
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://consulwise.onrender.com',
+    credentials: true,
+}));
 app.use(express.json());
 
 const sessionSecret = crypto.randomBytes(64).toString('hex');
@@ -37,13 +34,13 @@ app.use(passport.session());
 app.use('/', UserRoute);
 app.use('/', CompanyRoute);
 
-
 mongoose.connect(process.env.MONGO_DB_URL);
 const db = mongoose.connection;
 
-db.on("error", console.error.bind( "errore connessione al server"));
-db.once("open", () => { console.log("database mongodb connesso") });
+// Aggiunta dei log per il debug
+db.on("error", err => console.error("Errore durante la connessione al database:", err));
+db.once("open", () => console.log("Database MongoDB connesso"));
 
 app.listen(PORT, () =>
-    console.log(`server avviato e in ascolto sulla porta ${PORT}`)
+    console.log(`Server avviato e in ascolto sulla porta ${PORT}`)
 );

@@ -57,6 +57,7 @@ router.post("/login", (req, res, next) => {
                 const authToken = jwt.sign({ _id: user._id, username: user.username, surname: user.surname }, process.env.JWT_SECRET, {
                     expiresIn: "1h",
                 });
+                
                 res.status(200).json({
                     statusCode: 200,
                     message: "Login successful",
