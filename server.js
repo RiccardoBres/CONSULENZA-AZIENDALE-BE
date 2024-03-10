@@ -11,7 +11,7 @@ const crypto = require('crypto');
 const UserRoute = require('./Routes/UserRoutes');
 const CompanyRoute = require('./Routes/CompanyRoutes');
 const corsOptions = {
-    origin: 'https://consulwise.onrender.com',
+    origin: '*', 
     credentials: true,
 };
 
