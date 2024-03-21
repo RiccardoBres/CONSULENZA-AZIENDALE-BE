@@ -12,6 +12,11 @@ const CompanyRoute = require('./Routes/CompanyRoutes');
 require("dotenv").config();
 
 const app = express();
+app.use((req, res, next) => {
+    console.log('Request received:', req.method, req.url);
+    next();
+});
+
 app.use(cors({
     origin: 'https://consultwise.netlify.app',
     credentials: true,

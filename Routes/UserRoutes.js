@@ -38,6 +38,14 @@ router.post("/user/register", async (req, res) => {
     }
 });
 
+router.options("/login", (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://consultwise.netlify.app');
+    res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.send();
+});
+
 router.post("/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
         try {
