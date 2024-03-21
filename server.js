@@ -17,10 +17,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(cors({
-    origin: 'https://consultwise.netlify.app',
-    credentials: true,
-}));
+app.use(
+    cors({
+        origin: "https://consultwise.netlify.app",
+    }));
 app.use(express.json());
 
 const sessionSecret = crypto.randomBytes(64).toString('hex');
