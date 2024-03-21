@@ -12,15 +12,12 @@ const CompanyRoute = require('./Routes/CompanyRoutes');
 require("dotenv").config();
 
 const app = express();
-app.use((req, res, next) => {
-    console.log('Request received:', req.method, req.url);
-    next();
-});
-
-app.use(
-    cors({
-        origin: "https://consultwise.netlify.app",
-    }));
+app.use(cors({
+    origin: 'https://consultwise.netlify.app', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+    credentials: true 
+}));
 app.use(express.json());
 
 const sessionSecret = crypto.randomBytes(64).toString('hex');
